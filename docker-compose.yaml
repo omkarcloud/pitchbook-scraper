@@ -1,0 +1,10 @@
+services:
+  pitchbook-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Works on your own connection for about 10 profile pages a minute. For more, set a residential proxy in `PITCHBOOK_PROXY`.
+      # - PITCHBOOK_PROXY=http://user:pass@host:port
